@@ -1,0 +1,83 @@
+   0x08048de1 <+0>:	push   %ebp
+   0x08048de2 <+1>:	mov    %esp,%ebp
+   0x08048de4 <+3>:	push   %esi
+   0x08048de5 <+4>:	push   %ebx
+   0x08048de6 <+5>:	sub    $0x40,%esp
+   0x08048de9 <+8>:	lea    -0x38(%ebp),%eax
+   0x08048dec <+11>:	mov    %eax,0x4(%esp)
+   0x08048df0 <+15>:	mov    0x8(%ebp),%eax
+   0x08048df3 <+18>:	mov    %eax,(%esp)
+   0x08048df6 <+21>:	call   0x804929f <read_six_numbers>
+   0x08048dfb <+26>:	mov    $0x0,%esi
+   0x08048e00 <+31>:	mov    -0x38(%ebp,%esi,4),%eax
+   0x08048e04 <+35>:	sub    $0x1,%eax
+   0x08048e07 <+38>:	cmp    $0x5,%eax
+   0x08048e0a <+41>:	jbe    0x8048e11 <phase_6+48>
+   0x08048e0c <+43>:	call   0x804925d <explode_bomb>
+   0x08048e11 <+48>:	add    $0x1,%esi
+   0x08048e14 <+51>:	cmp    $0x6,%esi
+   0x08048e17 <+54>:	je     0x8048e34 <phase_6+83>
+   0x08048e19 <+56>:	mov    %esi,%ebx
+   0x08048e1b <+58>:	mov    -0x38(%ebp,%ebx,4),%eax
+   0x08048e1f <+62>:	cmp    %eax,-0x3c(%ebp,%esi,4)
+   0x08048e23 <+66>:	jne    0x8048e2a <phase_6+73>
+   0x08048e25 <+68>:	call   0x804925d <explode_bomb>
+   0x08048e2a <+73>:	add    $0x1,%ebx
+   0x08048e2d <+76>:	cmp    $0x5,%ebx
+   0x08048e30 <+79>:	jle    0x8048e1b <phase_6+58>
+   0x08048e32 <+81>:	jmp    0x8048e00 <phase_6+31>
+   0x08048e34 <+83>:	lea    -0x38(%ebp),%eax
+   0x08048e37 <+86>:	lea    -0x20(%ebp),%ebx
+   0x08048e3a <+89>:	mov    $0x7,%ecx
+   0x08048e3f <+94>:	mov    %ecx,%edx
+   0x08048e41 <+96>:	sub    (%eax),%edx
+   0x08048e43 <+98>:	mov    %edx,(%eax)
+   0x08048e45 <+100>:	add    $0x4,%eax
+   0x08048e48 <+103>:	cmp    %ebx,%eax
+   0x08048e4a <+105>:	jne    0x8048e3f <phase_6+94>
+   0x08048e4c <+107>:	mov    $0x0,%ebx
+   0x08048e51 <+112>:	jmp    0x8048e70 <phase_6+143>
+   0x08048e53 <+114>:	mov    0x8(%edx),%edx
+   0x08048e56 <+117>:	add    $0x1,%eax
+   0x08048e59 <+120>:	cmp    %ecx,%eax
+   0x08048e5b <+122>:	jne    0x8048e53 <phase_6+114>
+   0x08048e5d <+124>:	jmp    0x8048e64 <phase_6+131>
+   0x08048e5f <+126>:	mov    $0x804c154,%edx
+   0x08048e64 <+131>:	mov    %edx,-0x20(%ebp,%esi,4)
+   0x08048e68 <+135>:	add    $0x1,%ebx
+   0x08048e6b <+138>:	cmp    $0x6,%ebx
+   0x08048e6e <+141>:	je     0x8048e87 <phase_6+166>
+   0x08048e70 <+143>:	mov    %ebx,%esi
+---Type <return> to continue, or q <return> to quit---
+   0x08048e72 <+145>:	mov    -0x38(%ebp,%ebx,4),%ecx
+   0x08048e76 <+149>:	cmp    $0x1,%ecx
+   0x08048e79 <+152>:	jle    0x8048e5f <phase_6+126>
+   0x08048e7b <+154>:	mov    $0x1,%eax
+   0x08048e80 <+159>:	mov    $0x804c154,%edx
+   0x08048e85 <+164>:	jmp    0x8048e53 <phase_6+114>
+   0x08048e87 <+166>:	mov    -0x20(%ebp),%ebx
+   0x08048e8a <+169>:	lea    -0x1c(%ebp),%eax
+   0x08048e8d <+172>:	lea    -0x8(%ebp),%esi
+   0x08048e90 <+175>:	mov    %ebx,%ecx
+   0x08048e92 <+177>:	mov    (%eax),%edx
+   0x08048e94 <+179>:	mov    %edx,0x8(%ecx)
+   0x08048e97 <+182>:	add    $0x4,%eax
+   0x08048e9a <+185>:	cmp    %esi,%eax
+   0x08048e9c <+187>:	je     0x8048ea2 <phase_6+193>
+   0x08048e9e <+189>:	mov    %edx,%ecx
+   0x08048ea0 <+191>:	jmp    0x8048e92 <phase_6+177>
+   0x08048ea2 <+193>:	movl   $0x0,0x8(%edx)
+   0x08048ea9 <+200>:	mov    $0x5,%esi
+   0x08048eae <+205>:	mov    0x8(%ebx),%eax
+   0x08048eb1 <+208>:	mov    (%eax),%eax
+   0x08048eb3 <+210>:	cmp    %eax,(%ebx)
+   0x08048eb5 <+212>:	jge    0x8048ebc <phase_6+219>
+=> 0x08048eb7 <+214>:	call   0x804925d <explode_bomb>
+   0x08048ebc <+219>:	mov    0x8(%ebx),%ebx
+   0x08048ebf <+222>:	sub    $0x1,%esi
+   0x08048ec2 <+225>:	jne    0x8048eae <phase_6+205>
+   0x08048ec4 <+227>:	add    $0x40,%esp
+   0x08048ec7 <+230>:	pop    %ebx
+   0x08048ec8 <+231>:	pop    %esi
+   0x08048ec9 <+232>:	pop    %ebp
+   0x08048eca <+233>:	ret    
